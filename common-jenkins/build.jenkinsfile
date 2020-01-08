@@ -1,0 +1,45 @@
+properties([
+  parameters ([
+    string(name: 'var_one', defaultValue: 'defaultValue', description: 'describe var 1'),
+    string(name: 'var_two', defaultValue: 'defaultValue', description: 'describe var 2'),
+    string(name: 'var_three', defaultValue: 'default value', description: 'describe var 3'),
+    choice(name: 'ENVIRONMENT', choices: ['choice 1', 'choice 2', 'choice 3', 'choice 4'], description: 'Example for choice parameters'),
+  ])
+])
+
+podTemplate(
+ name: 'name-of-jenkins-slave-pod',
+ label: 'label',
+ namespace: 'ci-cd',
+ envVars: [
+     secretEnvVar(key: 'USER_NAME', secretName: 'secret-in-kubernetes', secretKey: 'password'),
+     secretEnvVar(key: 'USER_PASSWORD', secretName: 'secret-in-kubernetes', secretKey: 'password')
+     ],
+ containers: [
+   containerTemplate(
+           name: 'jnlp',
+           image: 'image-repository',
+           alwaysPullImage: true,
+           args: '${computer.jnlpmac} ${computer.name}',
+           ttyEnabled: false,
+           command: '',
+           resourceRequestCpu: '1000m',
+           resourceLimitCpu: '1000m',
+           resourceRequestMemory: '2048Mi',
+           resourceLimitMemory: '4096Mi',
+           )
+ ],
+ imagePullSecrets: ['secret-kubernetes'],
+ volumes: [
+   secretVolume(mountPath: '/.docker', secretName: 'secret-config-json')
+ ]) {
+	node('label'){
+
+		stage('stage 1') {
+			withEnv([ 'ENV1="value 1"',	
+			          'ENV2="value 2"', 
+					  'ENV3=value 3' 
+				   ]) {
+                sh "echo I am working "
+            }
+		}
