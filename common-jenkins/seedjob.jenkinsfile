@@ -11,7 +11,7 @@ pipelineJob("project-a/build") {
            remote {
            url(repo) }
            branch('master')
-           scriptPath("common-jenkins/build.jenkinsfile")  
+           scriptPath("common-jenkins/pipeline.jenkinsfile")  
            extensions {}
             }
           }
