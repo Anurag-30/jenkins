@@ -1,0 +1,21 @@
+def repo = 'https://github.com/Anurag-30/jenkins.git' 
+folder('project-a') {
+}
+
+
+pipelineJob("project-a/build") {
+  definition {
+    cpsScm {
+      scm {
+        git {
+           remote {
+           url(repo) }
+           branch('master')
+           scriptPath("common-jenkins/build.jenkinsfile")  
+           extensions {}
+            }
+          }
+        }
+      }
+    }
+
