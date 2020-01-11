@@ -7,4 +7,3 @@
 2. If the pipeline is manaully created from the UI it creates the jenkinsfile(code) in the repo with the exact code
 3. Don't make the changes to the jenkinsfile that is created by the pipeline in UI, it corrupts.
 4. The pipeline is specific to the repo used to create it. All the contents of the repo are available. ---> Doesn't require a git clone
-5. Although it takes the repo 
