@@ -216,7 +216,8 @@ master:
     - credentials-binding:1.20
     - git:4.0.0
     - kubernetes-cd:2.0.0
-
+    - job-dsl:1.76
+    - blueocean:1.17.0
   # Enable to always override the installed plugins with the values of 'master.installPlugins' on upgrade or redeployment.
   # overwritePlugins: true
   # Enable HTML parsing using OWASP Markup Formatter Plugin (antisamy-markup-formatter), useful with ghprb plugin.
