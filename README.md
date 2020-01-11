@@ -11,3 +11,4 @@
 
 ## NEED TO
 
+Do we need to trigger the pipeline for every commit?
