@@ -18,7 +18,7 @@ volumes: [
         container('git') {
           sh """
             echo "cloning the git repo"
-            git clone https://github.com/Anurag-30/MediaWiki.git
+            #git clone https://github.com/Anurag-30/MediaWiki.git
             ls -ltra
             
             """
