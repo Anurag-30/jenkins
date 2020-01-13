@@ -11,8 +11,8 @@
 
 ## NEED TO
 
-Do we need to trigger the pipeline for every commit?
-Trigerring build from blueocean UI.
+1. Do we need to trigger the pipeline for every commit? ---
+2. Trigerring build from blueocean UI. ---> Done
 
 ## Missing Features
 
