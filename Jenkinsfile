@@ -45,7 +45,7 @@ volumes: [
           sh """
             
             helm version
-            echo " this is auto builld"
+            echo " this is auto "
             """
         
       }
