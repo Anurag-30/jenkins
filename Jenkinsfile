@@ -33,6 +33,7 @@ volumes: [
             echo "This is step 2"
             docker --version
             ls -ltra
+            echo "testing auto"
             """
         
       }
