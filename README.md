@@ -16,4 +16,4 @@ Trigerring build from blueocean UI.
 
 ## Missing Features
 
-Grouping the jobs in blue
+Grouping the jobs in blueocean under a folder.
