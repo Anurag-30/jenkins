@@ -24,3 +24,5 @@ https://github.com/jenkinsci/kubernetes-plugin
 3. create pipeline automation --> the initial step
 
 https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/
+
+https://tomd.xyz/jenkins-shared-library/
