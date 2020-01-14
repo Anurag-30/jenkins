@@ -15,12 +15,11 @@ volumes: [
         stages {
 
             stage('build') {
-                container('gradle'){
                 steps {
                     sh 'mvn clean package -DskipTests=true'
                 }
             }
-        }
+        
     }
  }
 }
