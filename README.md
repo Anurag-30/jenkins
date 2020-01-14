@@ -11,7 +11,7 @@ Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This wi
 
 ## About BuildPipeline.groovy
 
-1. It is a shared library file which can be used by multiple jenkinsfile.
+1. It is a shared library file which can be used by multiple jenkinsfile. ---> The groovy file has to be under vars directory.
 2. It can have 'n' number of stages. The second stage here is the downstream job where it starts another job after the sucessful completion of before stages.
 
 
