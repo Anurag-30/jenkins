@@ -46,7 +46,7 @@ spec:
             stage('trigger deploy') {
                 steps {
                     
-             def job = build job: 'deploy-job'
+              build job: 'deploy-job'
                 
             }
         }
