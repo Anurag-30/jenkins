@@ -7,7 +7,7 @@ def call(Map pipelineParams) {
 
             stage('build') {
                 steps {
-                    sh 'mvn clean package -DskipTests=true'
+                    sh 'pwd'
                 }
             }
 
