@@ -33,6 +33,7 @@ spec:
 
             stage('build') {
                 steps {
+                    container('gradle'){
                     sh '''
                     ls;
                     pwd
@@ -40,6 +41,7 @@ spec:
                     '''
                 }
             }
+        }
         
     }
  }
