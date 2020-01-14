@@ -1,22 +1,23 @@
 # jenkins
+Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This will deploy jenkins into your cluster with blueocean installed in it.
 
-## OBSERVATIONS
+## OBSERVATIONS With Blueocean Plugin
 
 
 1. Blueocean plugin looks for a file with the name "Jenkinsfile" to create a pipeline 
-2. If the pipeline is manaully created from the UI it creates the jenkinsfile(code) in the repo with the exact code
+2. If the pipeline is manaully created from the UI it creates the jenkinsfile(code) in the repo with the exact code that matches the steps.
 3. Don't make the changes to the jenkinsfile that is created by the pipeline in UI, it corrupts.
 4. The pipeline is specific to the repo used to create it. All the contents of the repo are available. ---> Doesn't require a git clone
 
+## About BuildPipeline.groovy
 
-## NEED TO
+1. It is a shared library file which can be used by multiple jenkinsfile.
+2. It can have 'n' number of stages. The second stage here is the downstream job where it starts another job after the sucessful completion of before stages.
 
-1. Do we need to trigger the pipeline for every commit?
-2. Trigerring build from blueocean UI. ---> Done
 
 ## Missing Features
 
-1. Grouping the jobs in blueocean under a folder.
-2. Downstream and upstream
+1. Grouping the jobs in blueocean UI under a folder.
+
 3. create pipeline automation --> the initial step
 
