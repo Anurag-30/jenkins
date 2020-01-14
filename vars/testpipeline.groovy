@@ -2,7 +2,7 @@
 def call(Map pipelineParams) {
 
     pipeline {
-  agent {
+        agent {
     kubernetes {
       yaml """
 apiVersion: v1
