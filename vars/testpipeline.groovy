@@ -1,9 +1,8 @@
-
 def call(Map pipelineParams) {
 
     pipeline {
         agent {
-    kubernetes {
+               kubernetes {
       yaml """
 apiVersion: v1
 kind: Pod
@@ -12,8 +11,8 @@ metadata:
     some-label: some-label-value
 spec:
   containers:
-  - name: maven
-    image: maven:alpine
+  - name: gradle
+    image: gradle:latest
     command:
     - cat
     tty: true
@@ -24,19 +23,34 @@ spec:
     tty: true
 """
     }
-  
+             
+ 
+    }
+
+
+
         stages {
 
             stage('build') {
                 steps {
-                    container('maven'){
-                    sh 'pwd'
+                    container('gradle'){
+                    sh '''
+                    ls;
+                    pwd
+                    gradle build
+                    '''
                 }
             }
         }
 
+            stage('trigger deploy') {
+                steps {
+                    
+              build job: 'deploy-job'
+                
+            }
         }
         
     }
  }
-}
+} 
