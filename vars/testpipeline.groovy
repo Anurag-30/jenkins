@@ -29,6 +29,7 @@ spec:
 
             stage('build') {
                 steps {
+                    
                     sh 'pwd'
                 }
             }
