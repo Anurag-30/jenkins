@@ -11,8 +11,8 @@ metadata:
     some-label: some-label-value
 spec:
   containers:
-  - name: maven
-    image: maven:alpine
+  - name: gradle
+    image: gradle:latest
     command:
     - cat
     tty: true
@@ -22,31 +22,35 @@ spec:
     - cat
     tty: true
 """
-                        }
+    }
              
+ 
+    }
+
+
+
+        stages {
+
+            stage('build') {
+                steps {
+                    container('gradle'){
+                    sh '''
+                    ls;
+                    pwd
+                    gradle build
+                    '''
+                }
             }
-                stages {
+        }
 
-                        stage('build') {
-                                        steps {
-                                                container('gradle'){
-                                                                    sh '''
-                                                                    ls;
-                                                                    pwd
-                                                                    gradle build
-                                                                    '''
-                                                                }
-                                            }
-                                    }
-
-                        stage('trigger deploy') {
-                                        steps {
+            stage('trigger deploy') {
+                steps {
                     
-                                                build job: 'deploy-job'  // Triggers a job with the name `deploy job` as a downstream
+              build job: 'deploy-job'
                 
-                                             }
-                                    }
-        
-                     }
             }
-    } 
+        }
+        
+    }
+ }
+} 
