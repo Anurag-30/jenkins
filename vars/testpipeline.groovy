@@ -10,7 +10,7 @@ def call(Map pipelineParams) {
                     sh 'pwd'
                 }
             }
+
         }
         
-        }
     }
