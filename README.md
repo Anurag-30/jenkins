@@ -13,7 +13,7 @@ Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This wi
 
 1. It is a shared library file which can be used by multiple jenkinsfile. ---> The groovy file has to be under vars directory.
 2. It can have 'n' number of stages. The second stage here is the downstream job where it starts another job after the sucessful completion of before stages.
-3. You can refer this file in the jenkins file 
+3. You can refer this file in the jenkins file as shown in the example --> https://github.com/Anurag-30/gradle-demo.git
 
 https://github.com/jenkinsci/kubernetes-plugin
 
