@@ -30,4 +30,4 @@ This can be automated using the `bitbucket team` plugin.The inital job will scan
 
 Templating the `Jenkins pipelien` --> https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/
 
-https://tomd.xyz/jenkins-shared-library/
+Shared Library concepts --> https://tomd.xyz/jenkins-shared-library/
