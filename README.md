@@ -15,7 +15,7 @@ Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This wi
 2. It can have 'n' number of stages. The second stage here is the downstream job where it starts another job after the sucessful completion of before stages.
 3. You can refer this file in the `Jenkinsfile` as shown in the example --> https://github.com/Anurag-30/gradle-demo.git
 
-For more information on the kubernetes plugin  - 
+For more information on the kubernetes plugin  - https://github.com/jenkinsci/kubernetes-plugin
 
 
 
