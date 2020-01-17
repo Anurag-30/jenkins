@@ -25,7 +25,9 @@ https://github.com/jenkinsci/kubernetes-plugin
 
 This can be automated using the `bitbucket team` plugin.The inital job will scan the repos periodically looks for Jenkinsfile and create the pipelines. This job has to be configured from the normal jenkins UI. It also builds the jobs automatically when you push the code to that repository.
 
-##
+## Shared Libraries
+
+
 
 
 
