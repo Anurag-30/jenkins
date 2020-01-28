@@ -33,7 +33,7 @@ spec:
                     gradle build docker --stacktrace
                     docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
                     docker push artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:latest
-                    docker tag artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:latest artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:${GO_PIPELINE_LABEL}
+                    docker tag artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:latest artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:${JENKINS_PIPELINE_LABEL}
                     
 
 
