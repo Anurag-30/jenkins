@@ -31,13 +31,13 @@ spec:
                     container(''){
                     sh '''
                     gradle build docker --stacktrace
-                    
+
                     '''
                 }
             }
         }
 
-            stage('t') {
+            stage('Helm package and push') {
                 steps {
                     
               build job: 'deploy-job'
