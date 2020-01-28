@@ -31,6 +31,7 @@ spec:
                     container(''){
                     sh '''
                     gradle build docker --stacktrace
+                    
 
                     '''
                 }
