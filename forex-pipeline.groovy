@@ -46,7 +46,7 @@ spec:
                 steps {
                     
               sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${GO_PIPELINE_LABEL}/" helm/${JENKINS_PIPELINE_NAME}/values.yaml
-              
+              helm lint helm/${JENKINS_PIPELINE_NAME}
                 
             }
         }
