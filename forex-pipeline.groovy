@@ -62,6 +62,7 @@ spec:
 echo "$JOB_NAME" | awk -F[//] '{print $2}' ----> service name
 SERVICE_NAME=$(echo "$JOB_NAME" | awk -F[//] '{print $2}')
 
+
 =======================
 $ /bin/bash -c docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
 Run if Passed$ /bin/bash -c gradle build docker --stacktrace
