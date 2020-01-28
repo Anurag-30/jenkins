@@ -33,7 +33,7 @@ spec:
                     gradle build docker --stacktrace
                     docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
                     docker push artifactory.dev.maximus.axisb.com/docker/${GO_PIPELINE_NAME}:latest
-                    
+
 
 
                     '''
@@ -59,7 +59,6 @@ spec:
 $ /bin/bash -c docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
 Run if Passed$ /bin/bash -c gradle build docker --stacktrace
 Run if Passed$ /bin/bash -c docker push artifactory.dev.maximus.axisb.com/docker/${GO_PIPELINE_NAME}:latest
-Run if Passed$ /bin/bash -c docker tag artifactory.dev.maximus.axisb.com/docker/${GO_PIPELINE_NAME}:latest artifactory.dev.maximus.axisb.com/docker/${GO_PIPELINE_NAME}:${GO_PIPELINE_LABEL}
 Run if Passed$ /bin/bash -c docker push artifactory.dev.maximus.axisb.com/docker/${GO_PIPELINE_NAME}:${GO_PIPELINE_LABEL}
 Run if Passed$ /bin/bash -c sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${GO_PIPELINE_LABEL}/" helm/${GO_PIPELINE_NAME}/values.yaml
 Run if Passed$ /bin/bash -c helm lint helm/${GO_PIPELINE_NAME}
