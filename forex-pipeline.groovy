@@ -45,7 +45,8 @@ spec:
             stage('Helm package and push') {
                 steps {
                     
-              sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${GO_PIPELINE_LABEL}/" helm/${GO_PIPELINE_NAME}/values.yaml
+              sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${GO_PIPELINE_LABEL}/" helm/${JENKINS_PIPELINE_NAME}/values.yaml
+              
                 
             }
         }
