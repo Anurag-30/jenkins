@@ -49,7 +49,7 @@ spec:
               helm lint helm/${JENKINS_PIPELINE_NAME}
               helm init --client-only --stable-repo-url https://artifactory.dev.maximus.axisb.com/artifactory/helm
               helm package helm/${JENKINS_PIPELINE_NAME} --version ${JENKINS_PIPELINE_LABEL} 
-              curl -u ${ARTIFACTORY_USER}:${ARTIFACTORY_PASSWORD} -T ${GO_PIPELINE_NAME}-${GO_PIPELINE_LABEL}.tgz "https://artifactory.dev.maximus.axisb.com/artifactory/helm/${HELM_DIRECTORY}/${GO_PIPELINE_NAME}/${GO_PIPELINE_NAME}-${GO_PIPELINE_LABEL}.tgz" 
+              curl -u ${ARTIFACTORY_USER}:${ARTIFACTORY_PASSWORD} -T ${JENKINS_PIPELINE_NAME}-${JENKINS_PIPELINE_LABEL}.tgz "https://artifactory.dev.maximus.axisb.com/artifactory/helm/${HELM_DIRECTORY}/${GO_PIPELINE_NAME}/${GO_PIPELINE_NAME}-${GO_PIPELINE_LABEL}.tgz" 
             }
         }
         
