@@ -30,12 +30,14 @@ spec:
                 steps {
                     container(''){
                     sh '''
+                    
                     docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
                     gradle build docker --stacktrace
                     docker push artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:latest
                     docker tag artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:latest artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:${JENKINS_PIPELINE_LABEL}
                     docker push artifactory.dev.maximus.axisb.com/docker/${JENKINS_PIPELINE_NAME}:${JENKINS_PIPELINE_LABEL}
-'''
+                    
+                    '''
                 }
             }
         }
