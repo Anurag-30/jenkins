@@ -31,6 +31,8 @@ spec:
                     container(''){
                     sh '''
                     gradle build docker --stacktrace
+                    docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
+                    
 
 
                     '''
