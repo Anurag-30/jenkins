@@ -32,6 +32,7 @@ spec:
                     sh '''
                     gradle build docker --stacktrace
                     docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
+                    docker push artifactory.dev.maximus.axisb.com/docker/${GO_PIPELINE_NAME}:latest
                     
 
 
