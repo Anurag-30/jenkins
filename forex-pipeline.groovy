@@ -59,7 +59,7 @@ spec:
 
 
 
-
+echo "$JOB_NAME" | awk -F[//] '{print $2}' ----> service name
 
 =======================
 $ /bin/bash -c docker login artifactory.dev.maximus.axisb.com/artifactory/docker -u=${ARTIFACTORY_USER} -p=${ARTIFACTORY_PASSWORD}
