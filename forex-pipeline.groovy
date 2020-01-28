@@ -16,11 +16,11 @@ spec:
     command:
     - cat
     tty: true
-// /*  - name: busybox
-//     image: busybox
-//     command:
-//     - cat
-//     tty: true 
+ - name: busybox
+     image: busybox
+     command:
+     - cat
+   tty: true 
 """
     }
              
