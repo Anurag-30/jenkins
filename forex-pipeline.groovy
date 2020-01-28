@@ -26,11 +26,12 @@ spec:
 
         stages {
 
-            stage('build') {
+            stage('build app image and push') {
                 steps {
                     container(''){
                     sh '''
                     gradle build docker --stacktrace
+                    
                     '''
                 }
             }
