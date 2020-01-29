@@ -13,7 +13,7 @@ pipeline {
         stage("Env Variables") {
             steps {
                 sh "printenv"
-                echo ${pipelineParams.service}
+                echo https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/
             }
         }
     
