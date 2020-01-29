@@ -14,7 +14,7 @@ pipeline {
     }
         stage("test") {
             steps {
-                sh "printenv"
+                echo "$SERVICE_NAME"
             }
         }
     }   
