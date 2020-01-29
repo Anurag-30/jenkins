@@ -15,7 +15,7 @@ pipeline {
     
         stage("test") {
             steps {
-                echo "hello ${SERVICE_NAME}"
+                sh"hello ${SERVICE_NAME}"
             }
     }
   }
