@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh ''' 
                 whoami
-                echo  
+                echo env.SERVICE 
                 '''
             }
     }
