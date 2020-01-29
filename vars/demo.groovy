@@ -7,7 +7,7 @@ def call(Map pipelineParams) {
     }
              
   stages {
-        environment {
+          environment {
                 SERVICE_CREDS = credentials('my-prefined-username-password')
             }
         stage("Env Variables") {
