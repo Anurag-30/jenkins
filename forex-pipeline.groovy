@@ -71,6 +71,6 @@ Run if Passed$ /bin/bash -c docker tag artifactory.dev.maximus.axisb.com/docker/
 Run if Passed$ /bin/bash -c docker push artifactory.dev.maximus.axisb.com/docker/${GO_PIPELINE_NAME}:${GO_PIPELINE_LABEL}
 Run if Passed$ /bin/bash -c sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${GO_PIPELINE_LABEL}/" helm/${GO_PIPELINE_NAME}/values.yaml
 Run if Passed$ /bin/bash -c helm lint helm/${GO_PIPELINE_NAME}
-Run if Passed$ /bin/bash -c helm init --client-only --stable-repo-url https://artifactory.dev.maximus.axisb.com/artifactory/helm
+Run if Passed$ /bin/bash -c helm init --client-only --stable-repo-url https://artifactory.dev.maximus.axisb.com/artifactory/helm ----->> NO longer working
 Run if Passed$ /bin/bash -c helm package helm/${GO_PIPELINE_NAME} --version ${GO_PIPELINE_LABEL}
 Run if Passed$ /bin/bash -c curl -u ${ARTIFACTORY_USER}:${ARTIFACTORY_PASSWORD} -T ${GO_PIPELINE_NAME}-${GO_PIPELINE_LABEL}.tgz "https://artifactory.dev.maximus.axisb.com/artifactory/helm/${HELM_DIRECTORY}/${GO_PIPELINE_NAME}/${GO_PIPELINE_NAME}-${GO_PIPELINE_LABEL}.tgz"
