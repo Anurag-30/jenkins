@@ -45,7 +45,7 @@ spec:
             stage('Helm package and push') {
                 steps {
                     
-              sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${GO_PIPELINE_LABEL}/" helm/${JENKINS_PIPELINE_NAME}/values.yaml
+              sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${JENKINS_PIPELINE_LABEL}/" helm/${JENKINS_PIPELINE_NAME}/values.yaml
               helm lint helm/${JENKINS_PIPELINE_NAME}
               helm init --client-only --stable-repo-url https://artifactory.dev.maximus.axisb.com/artifactory/helm
               helm package helm/${JENKINS_PIPELINE_NAME} --version ${JENKINS_PIPELINE_LABEL} 
