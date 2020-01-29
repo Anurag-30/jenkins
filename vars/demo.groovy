@@ -14,7 +14,7 @@ def call(Map pipelineParams) {
         }
            stage("Env Variables") {
             steps {
-              echo "$SERVICE_NAME"
+              echo "hello"
             }
         }
     
