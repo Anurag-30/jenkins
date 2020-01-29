@@ -9,6 +9,7 @@ pipeline {
         stage("Env Variables") {
             steps {
                 sh "printenv"
+                sh 
             }
         }
     
