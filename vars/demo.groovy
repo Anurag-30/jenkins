@@ -12,7 +12,7 @@ def call(Map pipelineParams) {
                 sh "printenv"
             }
         }
-           stage("Env Variables") {
+           stage("test") {
             steps {
               echo "hello"
             }
