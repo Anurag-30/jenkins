@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh "printenv"
                 echo "${pipelineParams.service}"
-                docker login ${pipelineParams.service}
+                docker pull ${pipelineParams.service}
             }
         }
     
