@@ -9,7 +9,7 @@ pipeline {
         stage("Env Variables") {
             steps {
                 sh "printenv"
-                sh ''' SERVICE_NAME=$(echo "$JOB_NAME" | awk -F[//] '{print $2}') '''
+                sh ''' env.SERVICE_NAME=$(echo "$JOB_NAME" | awk -F[//] '{print $2}') '''
             }
         }
     
