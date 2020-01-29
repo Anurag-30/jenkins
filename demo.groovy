@@ -6,12 +6,7 @@ def call(Map pipelineParams) {
      
     }
              
- 
-    }
-
-
-
-        stages {
+  stages {
 
             stage('build') {
                 steps {
