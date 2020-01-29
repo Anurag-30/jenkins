@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh "printenv"
                 echo "${pipelineParams.service}"
+                docker 
             }
         }
     
