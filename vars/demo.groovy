@@ -13,7 +13,7 @@ pipeline {
         stage("Env Variables") {
             steps {
                 sh "printenv"
-                echo $SERVICE_NAME
+                echo ${SERVICE_NAME}
             }
         }
     
