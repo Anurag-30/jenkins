@@ -6,13 +6,13 @@ pipeline {
   }
 
   environment {
-        SERVICE_NAME = "$(echo "$JOB_NAME" | awk -F[//] '{print $2}')"
+        SERVICE_NAME = "$(echo "$env.JOB_NAME" | awk -F[//] '{print $2}')"
     }
   
     stages {
         stage("Env Variables") {
             script {
-                    env.FOO = "" 
+                    env.SERVICE_NAME = "" 
                 }
             steps {
                 sh "printenv"
