@@ -21,6 +21,7 @@ pipeline {
             steps {
                 sh ''' 
                 echo ${pipelineParams.service}
+                whoami
                 echo "hello" 
                 '''
             }
