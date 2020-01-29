@@ -10,14 +10,13 @@ pipeline {
             steps {
                 sh "printenv"
                 echo "${pipelineParams.service}"
-                sh " docker pull ${pipelineParams.service} "
+                sh " docker pull ${pipelineParams.service}: "
             }
         }
     
         stage("test") {
             steps {
                 sh ''' 
-                echo ${pipelineParams.service}
                 whoami
                 echo "hello" 
                 '''
