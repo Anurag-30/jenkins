@@ -9,7 +9,7 @@ Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This wi
 3. Don't make the changes to the jenkinsfile that is created by the pipeline in UI, it corrupts.
 4. The pipeline is specific to the repo used to create it. All the contents of the repo are available. ---> Doesn't require a git clone
 
-## About BuildPipeline.groovy
+## About testpipeline.groovy
 
 1. It is a shared library file which can be used by multiple jenkinsfile. ---> The groovy file has to be under vars directory.
 2. It can have 'n' number of stages. The second stage here is the downstream job where it starts another job after the sucessful completion of before stages.
