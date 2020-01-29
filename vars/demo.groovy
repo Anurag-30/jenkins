@@ -12,8 +12,7 @@ pipeline {
     stages {
         stage("Env Variables") {
             script {
-                    env.FOO = "IT DOES NOT WORK!" // it can't override env.FOO declared at the pipeline (or stage) level
-                    env.SOMETHING = "2" // it can override env variable created imperatively
+                    env.FOO = "IT DOES NOT WORK!" 
                 }
             steps {
                 sh "printenv"
