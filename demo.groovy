@@ -7,27 +7,10 @@ def call(Map pipelineParams) {
     }
              
   stages {
-
-            stage('build') {
-                steps {
-                    container('gradle'){
-                    sh '''
-                    ls;
-                    pwd
-                    gradle build
-                    '''
-                }
+        stage("Env Variables") {
+            steps {
+                sh "printenv"
             }
         }
-
-            stage('trigger deploy') {
-                steps {
-                    
-              build job: 'deploy-job'
-                
-            }
-        }
-        
     }
- }
 } 
