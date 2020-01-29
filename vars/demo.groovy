@@ -13,13 +13,13 @@ pipeline {
         stage("Env Variables") {
             steps {
                 sh "printenv"
-                echo ${SERVICE_NAME}
+                echo pipelineParams.branch
             }
         }
     
         stage("test") {
             steps {
-                sh ' echo "hello ${SERVICE_NAME}" '
+                sh ' echo "hello pipelineParams.branch '
             }
     }
   }
