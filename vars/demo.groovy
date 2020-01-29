@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("Env Variables") {
             script {
-                    env.FOO = "IT DOES NOT WORK!" 
+                    env.FOO = "" 
                 }
             steps {
                 sh "printenv"
