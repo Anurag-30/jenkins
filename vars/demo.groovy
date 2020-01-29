@@ -12,6 +12,11 @@ pipeline {
             }
         }
     }
-    
+        stage("test") {
+            steps {
+                sh "printenv"
+            }
+        }
+    }   
 }
 }
