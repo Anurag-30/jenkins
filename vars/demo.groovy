@@ -2,7 +2,7 @@ def call(Map pipelineParams) {
 
 pipeline {
   agent {
-    docker { image 'centos:latest' }
+    docker { image 'docker:latest' }
   }
   
     stages {
