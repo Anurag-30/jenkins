@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage("Env Variables") {
             steps {
-                sh "printenv "
+                sh "printenv | sort "
                 echo "${pipelineParams.service}"
                 sh " docker pull ${pipelineParams.service}:${env.GIT_COMMIT | cut -c1-5}"
             }
