@@ -4,6 +4,8 @@ pipeline {
   agent {
     docker { image 'centos:latest' }
   }
+
+
   
     stages {
         stage("Env Variables") {
