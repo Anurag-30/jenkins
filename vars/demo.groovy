@@ -5,9 +5,9 @@ pipeline {
     docker { image 'centos:latest' }
   }
 
-  environment {
+  /* environment {
         SERVICE_NAME = "$(echo "$env.JOB_NAME" | awk -F[//] '{print $2}')"
-    }
+    } */
   
     stages {
         stage("Env Variables") {
