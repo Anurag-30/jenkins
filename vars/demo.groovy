@@ -11,12 +11,13 @@ pipeline {
                 sh "printenv"
             }
         }
-    }
+    
         stage("test") {
             steps {
                 echo "$SERVICE_NAME"
             }
- } }
+    }
+  }
     }   
 }
 
