@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh "printenv | sort "
                 echo "${pipelineParams.service}"
-                sh " docker pull ${pipelineParams.service}:${env.GIT_COMMIT | cut -c1-5}"
+                sh " docker pull ${pipelineParams.service}:${env.GIT_COMMIT}"
             }
         }
     
