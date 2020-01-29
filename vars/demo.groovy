@@ -19,8 +19,9 @@ pipeline {
     
         stage("test") {
             steps {
-                sh ' 
-                echo "hello ${pipelineParams.service}" '
+                sh ''' 
+                echo "hello ${pipelineParams.service}" 
+                
             }
     }
   }
