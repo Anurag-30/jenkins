@@ -45,6 +45,7 @@ spec:
             stage('Helm package and push') {
                 steps {
                     container(''){
+             sh '''
               sed -ri "s/^(\s*)(tag\s*:\slatest\s$)/\1tag: ${JENKINS_PIPELINE_LABEL}/" helm/${JENKINS_PIPELINE_NAME}/values.yaml
               helm lint helm/${JENKINS_PIPELINE_NAME}
               helm repo add stable https://kubernetes-charts.storage.googleapis.com/https://artifactory.dev.maximus.axisb.com/artifactory/helm
