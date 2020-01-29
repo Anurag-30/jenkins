@@ -11,9 +11,7 @@ pipeline {
   
     stages {
         stage("Env Variables") {
-            script {
-                    env.SERVICE_NAME = "$(echo "$env.JOB_NAME" | awk -F[//] '{print $2}')" 
-                }
+
             steps {
                 sh "printenv"
                 echo ${SERVICE_NAME}
