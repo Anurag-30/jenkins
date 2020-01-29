@@ -6,7 +6,7 @@ pipeline {
   }
 
   environment {
-        SERVICE_NAME = "bar"
+        SERVICE_NAME = "$(echo "$JOB_NAME" | awk -F[//] '{print $2}')"
     }
   
     stages {
