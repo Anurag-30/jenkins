@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo "$SERVICE_NAME"
             }
-        }
+ } }
     }   
 }
 
