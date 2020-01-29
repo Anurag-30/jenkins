@@ -5,7 +5,9 @@ pipeline {
     docker { image 'centos:latest' }
   }
 
-
+  environment {
+        SERVICE_NAME = "bar"
+    }
   
     stages {
         stage("Env Variables") {
