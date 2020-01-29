@@ -1,6 +1,6 @@
 def call(Map pipelineParams) {
 
-    pipeline {
+pipeline {
   agent {
     docker { image 'centos:latest' }
   }
