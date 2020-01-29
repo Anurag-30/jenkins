@@ -20,7 +20,7 @@ pipeline {
         stage("test") {
             steps {
                 sh ''' 
-                echo ${pipelineParams.service}
+                echo "${pipelineParams.service}"
                 echo "hello" 
                 '''
             }
