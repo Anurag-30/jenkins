@@ -51,7 +51,9 @@ spec:
               helm repo add stable https://kubernetes-charts.storage.googleapis.com/https://artifactory.dev.maximus.axisb.com/artifactory/helm
               helm package helm/${JENKINS_PIPELINE_NAME} --version ${JENKINS_PIPELINE_LABEL} 
               curl -u ${ARTIFACTORY_USER}:${ARTIFACTORY_PASSWORD} -T ${JENKINS_PIPELINE_NAME}-${JENKINS_PIPELINE_LABEL}.tgz "https://artifactory.dev.maximus.axisb.com/artifactory/helm/${HELM_DIRECTORY}/${JENKINS_PIPELINE_NAME}/${JENKINS_PIPELINE_NAME}-${JENKINS_PIPELINE_LABEL}.tgz" 
+               '''
             }
+
         }
      }
         
