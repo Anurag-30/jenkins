@@ -19,7 +19,7 @@ pipeline {
                 sh ''' 
                 pwd
                 ls
-                echo ${env.SERVICE}
+                
                 '''
             }
     }
