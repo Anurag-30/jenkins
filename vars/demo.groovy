@@ -17,7 +17,8 @@ pipeline {
         stage("test") {
             steps {
                 sh ''' 
-                whoami
+                pwd
+                ls
                 echo "${env.SERVICE}"
                 '''
             }
