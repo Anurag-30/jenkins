@@ -18,7 +18,7 @@ spec:
     - cat
     tty: true
     volumeMounts:
-    
+    - name: docker-socket
 
 """
     }
