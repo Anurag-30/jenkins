@@ -17,7 +17,8 @@ spec:
     command:
     - cat
     tty: true
-    volumeMounts
+    volumeMounts:
+    
 
 """
     }
