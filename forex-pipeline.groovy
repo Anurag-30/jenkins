@@ -24,6 +24,7 @@ spec:
   - name: docker-socket
     hostPath:
       path: /var/run/docker.sock
+      type: Directory
 
 """
     }
