@@ -19,6 +19,7 @@ spec:
     tty: true
     volumeMounts:
     - name: docker-socket
+      mountPath: /
 
 """
     }
