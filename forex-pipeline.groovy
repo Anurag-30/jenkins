@@ -9,10 +9,10 @@ kind: Pod
 metadata:
   name: jenkins-slave
   labels:
-    role: some-label-value
+    role: test
 spec:
   containers:
-  - name: gradle
+  - name: artifac
     image: gradle:latest
     command:
     - cat
