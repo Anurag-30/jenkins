@@ -9,7 +9,7 @@ kind: Pod
 metadata:
   name: jenkins-slave
   labels:
-    some-label: some-label-value
+    role: some-label-value
 spec:
   containers:
   - name: gradle
