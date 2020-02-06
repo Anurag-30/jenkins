@@ -12,7 +12,7 @@ metadata:
     role: test
 spec:
   containers:
-  - name: artifac
+  - name: artifactory.dev.maximus.axisb.com/
     image: gradle:latest
     command:
     - cat
