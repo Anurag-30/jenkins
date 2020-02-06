@@ -12,8 +12,8 @@ metadata:
     role: test
 spec:
   containers:
-  - name: artifactory.dev.maximus.axisb.com/
-    image: gradle:latest
+  - name: 
+    image: artifactory.dev.maximus.axisb.com/
     command:
     - cat
     tty: true
