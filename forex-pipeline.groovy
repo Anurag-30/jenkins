@@ -12,7 +12,7 @@ metadata:
     role: test
 spec:
   containers:
-  - name: 
+  - name: jenkins-agent
     image: artifactory.dev.maximus.axisb.com/
     command:
     - cat
