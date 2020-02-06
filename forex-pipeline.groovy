@@ -7,7 +7,7 @@ def call(Map pipelineParams) {
 apiVersion: v1
 kind: Pod
 metadata:
-  
+  name: 
   labels:
     some-label: some-label-value
 spec:
