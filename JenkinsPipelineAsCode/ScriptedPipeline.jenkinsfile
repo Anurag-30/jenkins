@@ -38,7 +38,7 @@ volumes: [
       }
     }
  
-     stage('helm build') {
+     stage('helm package and push ') {
       
         container('helm') {
           sh """
