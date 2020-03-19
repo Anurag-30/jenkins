@@ -30,7 +30,7 @@ For more information on the kubernetes plugin  --> https://github.com/jenkinsci/
 
 
 
-## Missing Features 
+## Missing Features That You Were Looking For
 
 1. Grouping the jobs in blueocean UI under a folder.
 
