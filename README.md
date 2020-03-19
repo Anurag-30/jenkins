@@ -20,15 +20,6 @@ Connect to you kubernetes cluster and run the **jenkins-setup.sh** script. This 
 3. Don't make the changes to the jenkinsfile that is created by the pipeline in UI, it corrupts.
 4. The pipeline is specific to the repo used to create it. All the contents of the repo are available. ---> Doesn't require a git clone
 
-## About testpipeline.groovy
-
-1. It is a shared library file which can be used by multiple jenkinsfile. ---> The groovy file has to be under vars directory.
-2. It can have 'n' number of stages. The second stage here is the downstream job where it starts another job after the sucessful completion of before stages.
-3. You can refer this file in the `Jenkinsfile` as shown in the example --> https://github.com/Anurag-30/gradle-demo.git
-
-For more information on the kubernetes plugin  --> https://github.com/jenkinsci/kubernetes-plugin
-
-
 
 ## Missing Features That You Were Looking For
 
