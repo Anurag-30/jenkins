@@ -46,12 +46,13 @@ stages {
             }
           }
         }
-      stage('Push your docker image) {
+
+      stage('Push your Helm chart ) {
         steps {
             container('gradle'){
             sh '''
             
-            docker push <image name>
+            
 
             '''
             }
