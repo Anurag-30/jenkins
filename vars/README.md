@@ -4,5 +4,5 @@ If you have  complex Buildpipelines the Jenkinsfile gets bigger and bigger with 
 
 # Scenario 1
 
-We live in a world where micro-services are actively replacing monolithic applications, obviously there is a huge change in the way we build and deploy micro-services. Let us assume you have 40 micro-services, few of them backend , a few frontend but the steps to build them 
+We live in a world where micro-services are actively replacing monolithic applications, obviously there is a huge change in the way we build and deploy micro-services. Let us assume you have 40 micro-services, few of them backend , a few frontend but the steps to build them can be categorized into 3 or 4.
 
