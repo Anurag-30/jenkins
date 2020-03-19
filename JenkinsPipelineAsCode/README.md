@@ -12,3 +12,4 @@
 
     **Example** :
    sh 'echo ${service}'
+   sh "echo ${env.}
