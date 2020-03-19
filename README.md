@@ -1,5 +1,8 @@
 Dear Future me here is the list of learnings and observations from your past:
 
+There are two ways you write a Jenkinsfile
+
+
 # jenkins
 Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This will deploy jenkins into your cluster with blueocean installed in it.
 
