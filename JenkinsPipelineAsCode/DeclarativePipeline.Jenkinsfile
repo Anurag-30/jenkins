@@ -28,9 +28,8 @@ stages {
         steps {
             container('gradle'){
             sh '''
-            ls;
-            pwd
-            gradle build
+            gradle clean build docker --stacktrace
+            
             '''
             }
           }
