@@ -6,4 +6,4 @@
 
    **Solution**: You can override the jnlp to custom by adding the jnlp container in yaml file of the pod.
 
-3. A seed job can be used to set up a folder and a pipeline job in it.
+3. A seed job can be used to set up a folder in jenkins and a pipeline job in it.
