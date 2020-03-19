@@ -29,7 +29,7 @@ Connect to you kubernetes cluster and run the **jenkins-setup.sh** script. This 
 
 This can be automated using the `bitbucket team` plugin.The inital job will scan the repos periodically looks for Jenkinsfile and create the pipelines. This job has to be configured from the normal jenkins UI. It also builds the jobs automatically when you push the code to that repository.
 
-A
+About Kubernetes Plugin for Jenkins --> https://github.com/jenkinsci/kubernetes-plugin
 
 Templating the `Jenkins pipeline` --> https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/
 
