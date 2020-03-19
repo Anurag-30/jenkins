@@ -10,7 +10,7 @@ Go for declarative approach as it is better approach , says this guy here - http
 
 ## Setup Jenkins In Kubernetes
 
-Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This will deploy jenkins into your cluster with blueocean installed in it.
+Connect to you kubernetes cluster and run the **jenkins-setup.sh** script. This will deploy jenkins into your cluster with blueocean installed in it.
 
 ## Observations With Blueocean Plugin
 
