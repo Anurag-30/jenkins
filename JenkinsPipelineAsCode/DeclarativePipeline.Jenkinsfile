@@ -35,6 +35,17 @@ stages {
           }
         }
 
+       stage('buil) {
+        steps {
+            container('gradle'){
+            sh '''
+            gradle clean build docker --stacktrace
+
+            '''
+            }
+          }
+        }
+
     stage('trigger deploy') {
         steps {
             
