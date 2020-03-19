@@ -40,7 +40,18 @@ stages {
             container('gradle'){
             sh '''
             
-            docker push <ima>
+            docker push <image name>
+
+            '''
+            }
+          }
+        }
+      stage('Push your docker image) {
+        steps {
+            container('gradle'){
+            sh '''
+            
+            docker push <image name>
 
             '''
             }
