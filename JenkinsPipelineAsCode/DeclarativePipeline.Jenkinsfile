@@ -24,12 +24,12 @@ spec:
 }
 stages {
 
-    stage('build') {
+    stage('build your app') {
         steps {
             container('gradle'){
             sh '''
             gradle clean build docker --stacktrace
-            
+
             '''
             }
           }
