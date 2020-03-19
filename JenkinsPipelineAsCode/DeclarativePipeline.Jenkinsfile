@@ -49,7 +49,7 @@ stages {
 
       stage('Push your Helm chart ) {
         steps {
-            container('gradle'){}
+            container('gradle'){
             
             sh "sed -ri \"s/tag: latest/tag: ${env.Version}/\" helm/${env.SERVICE}/values.yaml"
             sh "helm lint helm/${env.SERVICE}"
@@ -60,6 +60,7 @@ stages {
             '''
             }
           }
+        }
 
     stage('trigger deploy') {
         steps {
