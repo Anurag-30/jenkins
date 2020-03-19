@@ -1,3 +1,3 @@
 # Useful Reminders
 
-1.
+1. 
