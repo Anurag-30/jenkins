@@ -32,8 +32,8 @@ stages {
             pwd
             gradle build
             '''
-                }
-        }
+            }
+          }
         }
 
             stage('trigger deploy') {
