@@ -1,4 +1,4 @@
-Dear Future me here is the list of learnings and observations from your past, please keep revisitng this and :
+Dear Future me here is the list of learnings and observations from your past, please keep revisitng this and make it better not worse:
 
 There are two ways you write a Jenkinsfile
 a) scripted pipeline - using node
