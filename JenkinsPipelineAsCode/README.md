@@ -4,6 +4,6 @@
 
 2. ScriptedPipeline picks the image from the pod template but there is an issue with Declarative pipeline as it is unable to pick custom images for jnlp that are configured in pod template. 
 
-   Solution: You can override the jnlp to custom by adding the jnlp container in yaml file of the pod.
+   **Solution**: You can override the jnlp to custom by adding the jnlp container in yaml file of the pod.
 
 3. A seed job can be used to set up a foler and a pipeline job in it.
