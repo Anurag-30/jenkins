@@ -35,11 +35,12 @@ stages {
           }
         }
 
-       stage('buil) {
+       stage('Push your docker image) {
         steps {
             container('gradle'){
             sh '''
-            gradle clean build docker --stacktrace
+            
+            docker push 
 
             '''
             }
