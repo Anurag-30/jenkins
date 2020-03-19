@@ -4,7 +4,10 @@ There are two ways you write a Jenkinsfile
 a) scripted pipeline - using node
 b) declarative pipeline - using pipeline
 
-# Jenkins P
+# Jenkins Pipeline As Code
+
+##
+
 Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This will deploy jenkins into your cluster with blueocean installed in it.
 
 ## OBSERVATIONS With Blueocean Plugin
