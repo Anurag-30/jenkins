@@ -4,7 +4,7 @@ There are two ways you write a Jenkinsfile
 a) scripted pipeline - using node
 b) declarative pipeline - using pipeline
 
-Go for declarative approach as it is 
+Go for declarative approach as it is better approach , says this guy here - 
 
 # Jenkins Pipeline As Code
 
