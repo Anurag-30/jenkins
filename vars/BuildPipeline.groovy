@@ -31,10 +31,10 @@ def call(Map pipelineParams) {
                 steps {
                     container('jenkins-agent') {
                         echo "Version is ${env.Version}"
-                        sh "docker login artifactory.dev.maximus.axisb.com -u=${ARTIFACTORY_CREDENTIALS_USR} -p=${ARTIFACTORY_CREDENTIALS_PSW}"
-                        sh "docker push artifactory.dev.maximus.axisb.com/forex-docker/${env.SERVICE}:latest"
-                        sh "docker tag artifactory.dev.maximus.axisb.com/forex-docker/${env.SERVICE}:latest artifactory.dev.maximus.axisb.com/forex-docker/${env.SERVICE}:${env.Version}"
-                        sh "docker push artifactory.dev.maximus.axisb.com/forex-docker/${env.SERVICE}:${env.Version}"
+                        sh "docker login artifactory.test.cicd.com -u=${ARTIFACTORY_CREDENTIALS_USR} -p=${ARTIFACTORY_CREDENTIALS_PSW}"
+                        sh "docker push artifactory.test.cicd.com/forex-docker/${env.SERVICE}:latest"
+                        sh "docker tag artifactory.test.cicd.com/forex-docker/${env.SERVICE}:latest artifactory.test.cicd.com/forex-docker/${env.SERVICE}:${env.Version}"
+                        sh "docker push artifactory.test.cicd.com/forex-docker/${env.SERVICE}:${env.Version}"
                     }
                 }
             }
@@ -45,8 +45,8 @@ def call(Map pipelineParams) {
                         sh "sed -ri \"s/tag: latest/tag: ${env.Version}/\" helm/${env.SERVICE}/values.yaml"
                         sh "helm lint helm/${env.SERVICE}"
                         sh "helm package helm/${env.SERVICE} --version ${env.Version}"
-                        sh "helm repo add stable https://artifactory.dev.maximus.axisb.com/artifactory/forex-helm-virtual"
-                        sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T ${SERVICE}-${Version}.tgz https://artifactory.dev.maximus.axisb.com/artifactory/forex-helm/maverick/${SERVICE}/${SERVICE}-${Version}.tgz '
+                        sh "helm repo add stable https://artifactory.test.cicd.com/artifactory/forex-helm-virtual"
+                        sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T ${SERVICE}-${Version}.tgz https://artifactory.test.cicd.com/artifactory/forex-helm/maverick/${SERVICE}/${SERVICE}-${Version}.tgz '
                     }
                 }
             }
@@ -55,7 +55,7 @@ def call(Map pipelineParams) {
                 steps {
                     container('jenkins-agent') {
                         sh "echo ${env.SERVICE}=${env.Version} >> version.txt"
-                        sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T version.txt https://artifactory.dev.maximus.axisb.com/artifactory/forex-generic/services-build-versions/${SERVICE}/version.txt'
+                        sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T version.txt https://artifactory.test.cicd.com/artifactory/forex-generic/services-build-versions/${SERVICE}/version.txt'
                     }
                 }
             }
