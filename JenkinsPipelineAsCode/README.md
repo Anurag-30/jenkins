@@ -1,3 +1,3 @@
 # Useful Reminders
 
-1. While using 
+1. While using Pod template in 
