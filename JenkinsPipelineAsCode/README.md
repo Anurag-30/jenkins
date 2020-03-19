@@ -4,4 +4,4 @@
 
 2. ScriptedPipeline picks the image from the pod template but there is an issue with Declarative pipeline as it is unable to pick custom images for jnlp that are configured in pod template. 
 
-Solution
+Solution: You can override
