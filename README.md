@@ -12,7 +12,7 @@ Go for declarative approach as it is better approach , says this guy here - http
 
 Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This will deploy jenkins into your cluster with blueocean installed in it.
 
-## OBSERVATIONS With Blueocean Plugin
+## Observations With Blueocean Plugin
 
 
 1. Blueocean plugin looks for a file with the name "Jenkinsfile" to create a pipeline 
