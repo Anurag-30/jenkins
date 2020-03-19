@@ -36,10 +36,10 @@ stages {
           }
         }
 
-            stage('trigger deploy') {
-                steps {
-                    
-              build job: 'deploy-job'
+    stage('trigger deploy') {
+        steps {
+            
+            build job: 'deploy-job'
                 
             }
         }
