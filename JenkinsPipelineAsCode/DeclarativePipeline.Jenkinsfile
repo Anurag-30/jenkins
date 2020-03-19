@@ -49,14 +49,13 @@ stages {
 
       stage('Push your Helm chart ) {
         steps {
-            container('gradle'){
-            sh '''
+            container('gradle'){}
             
-             sh "sed -ri \"s/tag: latest/tag: ${env.Version}/\" helm/${env.SERVICE}/values.yaml"
+            sh "sed -ri \"s/tag: latest/tag: ${env.Version}/\" helm/${env.SERVICE}/values.yaml"
             sh "helm lint helm/${env.SERVICE}"
             sh "helm package helm/${env.SERVICE} --version ${env.Version}"
-                        sh "helm repo add stable https://artifactory.test.cicd.com/artifactory/anurag-helm-virtual"
-                        sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T ${SERVICE}-${Version}.tgz https://artifactory.test.cicd.com/artifactory/anurag-helm/maverick/${SERVICE}/${SERVICE}-${Version}.tgz '
+            sh "helm repo add stable https://artifactory.test.cicd.com/artifactory/anurag-helm-virtual"
+            sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T ${SERVICE}-${Version}.tgz https://artifactory.test.cicd.com/artifactory/anurag-helm/maverick/${SERVICE}/${SERVICE}-${Version}.tgz '
 
             '''
             }
