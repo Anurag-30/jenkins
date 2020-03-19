@@ -8,11 +8,11 @@
 
 3. A seed job can be used to set up a folder in jenkins and a pipeline job in it.
 
-4. While Acceesing an environment variable use env when you are using double quotes.
+4. While Acceesing an environment variable in a stage use env when you are using double quotes.
    
    **Example** :
    
    `sh 'echo ${service}'`
    
-   `sh "echo ${env.service}"
+   `sh "echo ${env.service}"`
 
