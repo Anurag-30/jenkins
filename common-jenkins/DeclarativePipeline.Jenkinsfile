@@ -24,12 +24,12 @@ spec:
 }
 stages {
 
-            stage('build') {
-                steps {
-                    container('gradle'){
-                    sh '''
-                    ls;
-                    pwd
+    stage('build') {
+        steps {
+            container('gradle'){
+            sh '''
+            ls;
+                 pwd
                     gradle build
                     '''
                 }
