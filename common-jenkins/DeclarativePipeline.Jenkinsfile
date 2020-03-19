@@ -29,11 +29,11 @@ stages {
             container('gradle'){
             sh '''
             ls;
-                 pwd
-                    gradle build
-                    '''
+            pwd
+            gradle build
+            '''
                 }
-            }
+        }
         }
 
             stage('trigger deploy') {
