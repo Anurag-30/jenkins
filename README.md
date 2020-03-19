@@ -4,9 +4,9 @@ There are two ways you write a Jenkinsfile
 a) scripted pipeline - using node
 b) declarative pipeline - using pipeline
 
-Go for declarative approach as it is better approach , says this guy here - [a link] https://stackoverflow.com/questions/44657896/
+Go for declarative approach as it is better approach , says this guy here - [a link] https://stackoverflow.com/questions/44657896/jenkins-pipeline-jenkinsfile-node-and-pipeline-directives
 
-jenkins-pipeline-jenkinsfile-node-and-pipeline-directives. You can find an example for both of them under 
+. You can find an example for both of them under 
 
 **JenkinsPipelineAsCode**
 
