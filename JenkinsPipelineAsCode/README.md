@@ -8,4 +8,6 @@
 
 3. A seed job can be used to set up a folder in jenkins and a pipeline job in it.
 
-4. While Acceesing an environment variable use env when you are using 
+4. While Acceesing an environment variable use env when you are using double quotes.
+
+    **Example
