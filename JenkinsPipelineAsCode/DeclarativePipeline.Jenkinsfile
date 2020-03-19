@@ -60,7 +60,6 @@ stages {
             '''
             }
           }
-        }
 
     stage('trigger deploy') {
         steps {
