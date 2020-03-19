@@ -4,6 +4,8 @@ There are two ways you write a Jenkinsfile
 a) scripted pipeline - using node
 b) declarative pipeline - using pipeline
 
+Go for 
+
 # Jenkins Pipeline As Code
 
 ## Setup Jenkins In Kubernetes
