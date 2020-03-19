@@ -21,13 +21,8 @@ spec:
     tty: true
 """
     }
-             
- 
-    }
-
-
-
-        stages {
+}
+stages {
 
             stage('build') {
                 steps {
