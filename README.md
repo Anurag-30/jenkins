@@ -1,4 +1,4 @@
-Dear Future me 
+Dear Future me here is the list of items 
 # jenkins
 Connect to you kubernetes cluster and run the `jenkins-setup.sh` script. This will deploy jenkins into your cluster with blueocean installed in it.
 
