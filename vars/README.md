@@ -4,7 +4,10 @@ If you have  complex Buildpipelines the Jenkinsfile gets bigger and bigger with 
 
 # Scenario 1
 
-We live in a world where micro-services are actively replacing monolithic applications, obviously there is a huge change in the way we build and deploy micro-services. Let us assume you have 40 micro-services, few of them backend ,a few frontend having their own code repositiories in this case git. This means you need to have a Jenkinsfile in all the 40 repos which has the steps to build just like the one in **JenkinsPipelineAsCode** folder. The problem with this is if I have to change or add a stage in my pipeline I have to push the code to 40 repos and there is a high chance of 
+We live in a world where micro-services are actively replacing monolithic applications, obviously there is a huge change in the way we build and deploy micro-services. Let us assume you have 40 micro-services, few of them backend ,a few frontend having their own code repositiories in this case git. This means you need to have a Jenkinsfile in all the 40 repos which has the steps to build just like the one in **JenkinsPipelineAsCode** folder. 
+
+1. The problem with this is if I have to change or add a stage in my pipeline I have to push the code to 40 repos and there is a high chance of making a mistake.
+
 
 ## Assumption
 
