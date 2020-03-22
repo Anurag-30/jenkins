@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: jenkins-slave
 spec:
-  hostAliases:                         // This makes /etc/host emn
+  hostAliases:                         // This makes /etc/host entries inside the pod
   - ip: "172.16.34.56"                               
     hostnames:
     - "test.abc.com"                   
