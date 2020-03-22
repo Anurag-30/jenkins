@@ -4,7 +4,7 @@ metadata:
   name: jenkins-slave
 spec:
   hostAliases:
-  - ip: "10."
+  - ip: "172.16.34.56"
     hostnames:
     - "bitbucket.dev.maximus.axisb.com"
     - "artifactory.dev.maximus.axisb.com"
