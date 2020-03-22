@@ -74,7 +74,6 @@ def PublishArtifacts() {
                 archiveArtifacts artifacts: 'smoke-test/TestsReports/*.*', fingerprint: true, allowEmptyArchive: true
                 archiveArtifacts artifacts: 'helm-charts/application-services/requirements.yaml', fingerprint: true, allowEmptyArchive: true
                 }
+            }
+        }
     }
-}
-    }
-}
