@@ -1,4 +1,4 @@
-## This script 
+## This script tags the commit and increaments the  
 #!/bin/bash
 set -e
 
