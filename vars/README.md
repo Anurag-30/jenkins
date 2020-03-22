@@ -22,7 +22,7 @@ Take a look at BuildPipeline.groovy, It consists of all the stages that are requ
 
 # Scenario 2
 
-Now we have 
+Now we have successfully made all the 40 repos to use 
 
 
 
