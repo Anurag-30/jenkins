@@ -18,7 +18,7 @@ Let us assume that we have 40 services but steps to build them can be categorize
 
 ## Solution
 
-Take a look at BuildPipeline.groovy, It consists of all the stages that are requrired to build your services. We will see how we can use this in the Jenkinsfile. 
+Take a look at BuildPipeline.groovy, It consists of all the stages that are requrired to build your services. We will see how we can use this in the Jenkinsfile, look for Build.Jenkinsfile
 
 
 
