@@ -21,7 +21,7 @@ def call(Map pipelineParams) {
                         sh "git config --global http.postBuffer 524288000"
                         sh "sh git_version.sh -b gradle"
                         script {
-                            env.Version = sh(returnStdout: true, script: 'sh git_version.sh -v gradle').trim()
+                            env.Version = sh(returnStdout: true, script: 'sh git_version.sh -v gradle').trim()  // Assigning 
                         }
                     }
                 }
