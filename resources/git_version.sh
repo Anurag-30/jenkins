@@ -1,3 +1,4 @@
+## This script 
 #!/bin/bash
 set -e
 
