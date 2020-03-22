@@ -15,11 +15,11 @@ spec:
   - name:  jnlp
     image: jenkinsci/jnlp-slave
   - name: jenkins-agent
-    image: jenkins-agent-custom:latest
+    image: jenkins-agent-custom:latest   // 
     command:
     - cat
     tty: true
-    volumeMounts:
+    volumeMounts:                    // mounting docker daemon of the node to the pod
     - name: docker-socket
       mountPath: /var/run
   volumes:
