@@ -8,5 +8,5 @@ We live in a world where micro-services are actively replacing monolithic applic
 
 ## Assumption
 
- but the steps to build them can be categorized into 3 or 4.
+ steps to build them can be categorized into 3 or 4.
 
