@@ -1,4 +1,4 @@
-def deleteExistingHelmChart() {
+def deleteExistingHelmChart() {              
     container('jenkins-agent') {
         withFolderProperties {
             sh '''
