@@ -1,5 +1,5 @@
 def call(Map pipelineParams) {
-    def git_version_script = libraryResource 'git_version.sh'
+    def git_version_script = libraryResource 'git_version.sh' // Assign a variable 
     pipeline {
         agent {
             kubernetes {
