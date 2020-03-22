@@ -32,7 +32,7 @@ def setServiceVersion(String upstreamEnv) {
     }
 }
 
-// Installing Helm chart 
+// Function Installing Helm chart 
 def installHelmChart() {
     withFolderProperties {
         container('jenkins-agent') {
@@ -58,6 +58,7 @@ def publishVersion() {
         }
     }
 }
+
 
 def triggerDownstreamservice(String downstreamEnv) {
     container('jenkins-agent') {
