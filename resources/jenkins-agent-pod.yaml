@@ -15,7 +15,7 @@ spec:
     - "" 
   containers:
   - name:  jnlp
-    image: artifactory.dev.maximus.axisb.com/maximus-infra-leverage-docker/jenkins-crt-slave-baseimage:0.0.1
+    image: jenkins-jnlp
   - name: jenkins-agent
     image: artifactory.dev.maximus.axisb.com/forex-docker/jenkins-agent-custom:latest
     command:
