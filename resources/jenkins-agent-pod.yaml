@@ -7,12 +7,12 @@ spec:
   - ip: "172.16.34.56"
     hostnames:
     - "test.abc.com"
-    - "artifactory.dev.maximus.axisb.com"
+    - "abc.test.com"
   - ip: "10.24.133.196"
     hostnames:
-    - "web-sit.maverick.dev.axisb.com"
-    - "dlp-sit.maverick.dev.axisb.com"
-    - "mountebank-ui-sit.maverick.dev.axisb.com" 
+    - ""
+    - ""
+    - "" 
   containers:
   - name:  jnlp
     image: artifactory.dev.maximus.axisb.com/maximus-infra-leverage-docker/jenkins-crt-slave-baseimage:0.0.1
