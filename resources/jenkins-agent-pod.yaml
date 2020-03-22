@@ -11,13 +11,12 @@ spec:
   - ip: "10.24.133.196"
     hostnames:
     - ""
-    - ""
-    - "" 
+ 
   containers:
   - name:  jnlp
     image: jenkinsci/jnlp-slave
   - name: jenkins-agent
-    image: artifactory.dev.maximus.axisb.com/forex-docker/jenkins-agent-custom:latest
+    image: jenkins-agent-custom:latest
     command:
     - cat
     tty: true
