@@ -38,7 +38,7 @@ def installHelmChart() {
             sh '''
             echo "### Installing seed helm chart with version: ${SEED_VERSION}"
             helm repo add stable https://artifactory.test.cicd.com/artifactory/anurag-helm-virtual
-            helm upgrade service-${ENVIRONMENT_NAME} stable/seed  --install --version ${SEED_VERSION} --set environment.name=${ENVIRONMENT_NAME} --namespace ${TASK_NAMESPACE}
+            helm upgrade service-${ENVIRONMENT_NAME} stable/service  --install --version ${service_VERSION} --set environment.name=${ENVIRONMENT_NAME} --namespace ${TASK_NAMESPACE}
             '''
         }
     }
@@ -48,11 +48,11 @@ def publishVersion() {
     withFolderProperties {
         container('jenkins-agent') {
             sh '''
-            echo "### Publishing seed helm chart version: ${SEED_VERSION} in file version-${BUILD_NUMBER}.txt"
-            printf "seed_version=%s\n" ${SEED_VERSION} >> version-${BUILD_NUMBER}.txt
+            echo "### Publishing service helm chart version: ${service_VERSION} in file version-${BUILD_NUMBER}.txt"
+            printf "service_version=%s\n" ${service_VERSION} >> version-${BUILD_NUMBER}.txt
             cp version-${BUILD_NUMBER}.txt version-latest.txt
-            curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T version-latest.txt https://artifactory.test.cicd.com/artifactory/anurag-generic/${ENVIRONMENT_NAME}-verified/seed/version-latest.txt
-            curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T version-${BUILD_NUMBER}.txt https://artifactory.test.cicd.com/artifactory/anurag-generic/${ENVIRONMENT_NAME}-verified/seed/version-${BUILD_NUMBER}.txt
+            curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T version-latest.txt https://artifactory.test.cicd.com/artifactory/anurag-generic/${ENVIRONMENT_NAME}-verified/service/version-latest.txt
+            curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T version-${BUILD_NUMBER}.txt https://artifactory.test.cicd.com/artifactory/anurag-generic/${ENVIRONMENT_NAME}-verified/service/version-${BUILD_NUMBER}.txt
             '''
         }
     }
