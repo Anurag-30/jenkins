@@ -5,9 +5,9 @@ def deleteExistingHelmChart() {
         withFolderProperties {
             sh '''
             helm repo add stable https://artifactory.test.cicd.com/artifactory/anuragok-helm-virtual
-            if [ $(helm list -n ${TASK_NAMESPACE} | grep seed-${ENVIRONMENT_NAME} >/dev/null; echo $?) -eq 0 ];
+            if [ $(helm list -n ${TASK_NAMESPACE} | grep service-${ENVIRONMENT_NAME} >/dev/null; echo $?) -eq 0 ];
             then
-                helm delete seed-${ENVIRONMENT_NAME} -n ${TASK_NAMESPACE};
+                helm delete service-${ENVIRONMENT_NAME} -n ${TASK_NAMESPACE};
             fi
             '''
         }
@@ -24,7 +24,7 @@ def setServiceVersion(String upstreamEnv) {
                 }
                 else {
                     def upstream_build_number = UPSTREAM_BUILD.split('#')[1]
-                    def app = sh(returnStdout: true, script: "curl -k https://artifactory.test.cicd.com/artifactory/anurag-generic/${upstreamEnv}-verified/seed/version-${upstream_build_number}.txt")
+                    def app = sh(returnStdout: true, script: "curl -k https://artifactory.test.cicd.com/artifactory/anurag-generic/${upstreamEnv}-verified/service/version-${upstream_build_number}.txt")
                     env.SERVICE_VERSION = app.split('=')[1]
                 }
             }
@@ -36,7 +36,7 @@ def installHelmChart() {
     withFolderProperties {
         container('jenkins-agent') {
             sh '''
-            echo "### Installing seed helm chart with version: ${SEED_VERSION}"
+            echo "### Installing service helm chart with version: ${service_VERSION}"
             helm repo add stable https://artifactory.test.cicd.com/artifactory/anurag-helm-virtual
             helm upgrade service-${ENVIRONMENT_NAME} stable/service  --install --version ${service_VERSION} --set environment.name=${ENVIRONMENT_NAME} --namespace ${TASK_NAMESPACE}
             '''
@@ -58,8 +58,8 @@ def publishVersion() {
     }
 }
 
-def triggerDownstreamSeed(String downstreamEnv) {
+def triggerDownstreamservice(String downstreamEnv) {
     container('jenkins-agent') {
-        build job: "${downstreamEnv}/seed-deploy-${downstreamEnv}", propagate: false, parameters: [string(name: 'UPSTREAM_BUILD', value: "${BUILD_NUMBER}")]
+        build job: "${downstreamEnv}/service-deploy-${downstreamEnv}", propagate: false, parameters: [string(name: 'UPSTREAM_BUILD', value: "${BUILD_NUMBER}")]
     }
 }
