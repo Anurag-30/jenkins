@@ -20,12 +20,12 @@ def setServiceVersion(String upstreamEnv) {
             script {
                 if("${ENVIRONMENT_NAME}" == "sit") {
                     def app = sh(returnStdout: true, script: "curl -k 'https://artifactory.test.cicd.com/artifactory/anurag-generic/services-build-versions/service/version.txt'")
-                    env.SEED_VERSION = app.split('=')[1]
+                    env.SERVICE_VERSION = app.split('=')[1]
                 }
                 else {
                     def upstream_build_number = UPSTREAM_BUILD.split('#')[1]
                     def app = sh(returnStdout: true, script: "curl -k https://artifactory.test.cicd.com/artifactory/anurag-generic/${upstreamEnv}-verified/seed/version-${upstream_build_number}.txt")
-                    env.SEED_VERSION = app.split('=')[1]
+                    env.SERVICE_VERSION = app.split('=')[1]
                 }
             }
         }
