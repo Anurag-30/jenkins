@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins-slave
+spec:
+  hostAliases:
+  - ip: "10."
+    hostnames:
+    - "bitbucket.dev.maximus.axisb.com"
+    - "artifactory.dev.maximus.axisb.com"
+  - ip: "10.24.133.196"
+    hostnames:
+    - "web-sit.maverick.dev.axisb.com"
+    - "dlp-sit.maverick.dev.axisb.com"
+    - "mountebank-ui-sit.maverick.dev.axisb.com" 
+  containers:
+  - name:  jnlp
+    image: artifactory.dev.maximus.axisb.com/maximus-infra-leverage-docker/jenkins-crt-slave-baseimage:0.0.1
+  - name: jenkins-agent
+    image: artifactory.dev.maximus.axisb.com/forex-docker/jenkins-agent-custom:latest
+    command:
+    - cat
+    tty: true
+    volumeMounts:
+    - name: docker-socket
+      mountPath: /var/run
+  volumes:
+  - name: docker-socket
+    hostPath:
+      path: /var/run
+      type: Directory
