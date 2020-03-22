@@ -22,7 +22,8 @@ Take a look at BuildPipeline.groovy, It consists of all the stages that are requ
 
 # Scenario 2
 
-Now we have successfully made all the 40 repos to use 3-4 common Shared library. However we now have identified that even the 3-4 shared library scripts have some redudant code. There are few stages that are common among them. In order to drill down further we have made one file which has all the common stages , look at **commons
+Now we have successfully made all the 40 repos to use 3-4 common Shared library. However we now have identified that even the 3-4 shared library scripts have some redudant code. There are few stages that are common among them. In order to drill down further we have made one file which has all the common stages , look at **commonstages.groovy**
+
 
 
 
