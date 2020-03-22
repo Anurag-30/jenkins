@@ -6,7 +6,7 @@ spec:
   hostAliases:
   - ip: "172.16.34.56"
     hostnames:
-    - "bitbucket.dev.maximus.axisb.com"
+    - "test.abc.com"
     - "artifactory.dev.maximus.axisb.com"
   - ip: "10.24.133.196"
     hostnames:
