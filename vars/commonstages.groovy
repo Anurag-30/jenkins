@@ -66,4 +66,6 @@ def triggerDownstreamservice(String downstreamEnv) {
     }
 }
 
-def 
+def PublishArtifacts() {
+    
+}
