@@ -5,7 +5,7 @@ SCRIPT=$0
 ARG=$1
 REPO_TYPE=$2
 
-TAG_REST_URL="https://{GIT_URL}/rest/api/1.0/projects/{}/repos/${SERVICE}/tags"
+TAG_REST_URL="https://{GIT_URL}/rest/api/1.0/projects/{PROJECT_KEY}/repos/${SERVICE}/tags"
 
 if [ "${REPO_TYPE}" = "nodejs" ];
 then
