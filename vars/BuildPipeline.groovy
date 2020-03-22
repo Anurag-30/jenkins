@@ -71,7 +71,7 @@ def call(Map pipelineParams) {
 
         post {
             always {
-                // publish test reports which are in HTML format only. If you want to post all the artifacts irrespeective of type see commonstages.groovy for PublishArti
+                // publish test reports which are in HTML format only. If you want to post all the artifacts irrespeective of type see commonstages.groovy for PublishArtifacts function
                 publishHTML target:[
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
