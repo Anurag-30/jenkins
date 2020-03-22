@@ -19,7 +19,7 @@ def setServiceVersion(String upstreamEnv) {
         container('jenkins-agent') {
             script {
                 if("${ENVIRONMENT_NAME}" == "sit") {
-                    def app = sh(returnStdout: true, script: "curl -k 'https://artifactory.test.cicd.com/artifactory/anurag-generic/services-build-versions/seed/version.txt'")
+                    def app = sh(returnStdout: true, script: "curl -k 'https://artifactory.test.cicd.com/artifactory/anurag-generic/services-build-versions/service/version.txt'")
                     env.SEED_VERSION = app.split('=')[1]
                 }
                 else {
