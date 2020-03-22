@@ -36,3 +36,9 @@ About Kubernetes Plugin for Jenkins --> https://github.com/jenkinsci/kubernetes-
 Templating the `Jenkins pipeline` --> https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/
 
 Shared Library concepts --> https://tomd.xyz/jenkins-shared-library/
+
+## Note:
+
+1. Ideally your shared libraries will be in common repo where your application repos will be loading them at the run time.
+2. Build.Jenkinsfile belongs in your code repository of your apllication , in order to access the common repo we have written a small code.
+3. For some reason if your shared library and Jenkinsfile is in the same repo you don't need that piece of code as we did in Commons.Jenkinsfile

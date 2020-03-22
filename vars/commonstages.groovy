@@ -60,7 +60,7 @@ def publishVersion() {
 }
 
 // Function to trigger any downstream job
-def triggerDownstreamservice(String downstreamEnv) {
+def triggerDownstreamJob(String downstreamEnv) {
     container('jenkins-agent') {
         build job: "${downstreamEnv}/service-deploy-${downstreamEnv}", propagate: false, parameters: [string(name: 'UPSTREAM_BUILD', value: "${BUILD_NUMBER}")]
     }
