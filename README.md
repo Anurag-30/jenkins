@@ -40,5 +40,7 @@ Shared Library concepts --> https://tomd.xyz/jenkins-shared-library/
 ## Note:
 
 1. Ideally your shared libraries will be in common repository, your application repos will be loading them at the run time.
-2. Build.Jenkinsfile belongs in your code repository of your apllication ,in order to access the common repo we have written a small code that fetches the git repo where the common libraries
+
+2. Build.Jenkinsfile belongs in your code repository of your apllication ,in order to access the common repo we have written a small code that fetches the git repo where the common libraries reside.
+
 3. For some reason if your shared library and Jenkinsfile is in the same repo you don't need that piece of code as we did in Commons.Jenkinsfile
