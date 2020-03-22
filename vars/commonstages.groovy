@@ -1,4 +1,5 @@
-// 
+// Function to delete existing helm chart
+
 def deleteExistingHelmChart() {              
     container('jenkins-agent') {
         withFolderProperties {
