@@ -71,7 +71,7 @@ def call(Map pipelineParams) {
 
         post {
             always {
-                // publish test reports
+                // publish test reports which are in HTML format
                 publishHTML target:[
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
