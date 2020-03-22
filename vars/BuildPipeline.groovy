@@ -17,7 +17,7 @@ def call(Map pipelineParams) {
                 steps {
                     container('jenkins-agent') {
                         sh "gradle clean build docker --stacktrace"
-                        writeFile file: 'git_version.sh', text: "${git_version_script}" // writing the file from the variable 
+                        writeFile file: 'git_version.sh', text: "${git_version_script}" // writing the file in text format from the variable 
                         sh "git config --global http.postBuffer 524288000"
                         sh "sh git_version.sh -b gradle"
                         script {
