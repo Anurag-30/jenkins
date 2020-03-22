@@ -8,6 +8,7 @@ We live in a world where micro-services are actively replacing monolithic applic
 
 1. The problem with this is if I have to change or add a stage in my pipeline I have to push the code to 40 repos and there is a high chance of making a mistake.
 
+2. There is no 
 
 ## Assumption
 
