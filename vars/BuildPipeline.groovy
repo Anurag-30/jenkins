@@ -71,7 +71,7 @@ def call(Map pipelineParams) {
 
         post {
             always {
-                // publish test reports which are in HTML format only. If you want to po
+                // publish test reports which are in HTML format only. If you want to post all the artifacts irrespeective of type see 
                 publishHTML target:[
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
