@@ -2,7 +2,7 @@ def deleteExistingHelmChart() {
     container('jenkins-agent') {
         withFolderProperties {
             sh '''
-            helm repo add stable https://artifactory.test.cicd.com/artifactory/anurag-helm-virtual
+            helm repo add stable https://artifactory.test.cicd.com/artifactory/anuragok-helm-virtual
             if [ $(helm list -n ${TASK_NAMESPACE} | grep seed-${ENVIRONMENT_NAME} >/dev/null; echo $?) -eq 0 ];
             then
                 helm delete seed-${ENVIRONMENT_NAME} -n ${TASK_NAMESPACE};
