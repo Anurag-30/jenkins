@@ -68,7 +68,13 @@ def triggerDownstreamservice(String downstreamEnv) {
 
 def PublishArtifacts() {
     container('jenkins-agent') {
-            
-
+            post {
+        always {
+            archiveArtifacts artifacts: 'smoke-test/cypress/screenshots/**/*.*', fingerprint: true, allowEmptyArchive: true
+            archiveArtifacts artifacts: 'smoke-test/TestsReports/*.*', fingerprint: true, allowEmptyArchive: true
+            archiveArtifacts artifacts: 'helm-charts/application-services/requirements.yaml', fingerprint: true, allowEmptyArchive: true
+                }
+    }
+}
     }
 }
