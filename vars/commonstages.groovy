@@ -13,7 +13,7 @@ def deleteExistingHelmChart() {
         }
     }
 }
-// 
+// Function to get the service version
 def setServiceVersion(String upstreamEnv) {
     withFolderProperties {
         container('jenkins-agent') {
@@ -31,6 +31,7 @@ def setServiceVersion(String upstreamEnv) {
         }
     }
 }
+
 
 def installHelmChart() {
     withFolderProperties {
