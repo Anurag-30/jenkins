@@ -8,7 +8,7 @@ spec:
     hostnames:
     - "test.abc.com"                   
     - "abc.test.com"
-  - ip: "10.24.133.196"
+  - ip: "10.23.33.96"
     hostnames:
     - "test.xyz.com"
   containers:
