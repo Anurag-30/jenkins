@@ -10,7 +10,7 @@ We live in a world where micro-services are actively replacing monolithic applic
 
 2. The code gets messier and you would loose track of it even before you realize.
 
-3. 
+3. The code is redundant.
 
 ## Assumption
 
