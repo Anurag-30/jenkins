@@ -3,7 +3,7 @@ def call(Map pipelineParams) {
     pipeline {
         agent {
             kubernetes {
-                yaml libraryResource('jenkins-agent-pod.yaml') // vars 
+                yaml libraryResource('jenkins-agent-pod.yaml') // You will find all the 
             }
         }
 
