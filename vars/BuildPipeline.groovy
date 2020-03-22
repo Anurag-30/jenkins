@@ -8,7 +8,7 @@ def call(Map pipelineParams) {
         }
 
         environment {
-            ARTIFACTORY_CREDENTIALS = credentials('jfrog-user')
+            ARTIFACTORY_CREDENTIALS = credentials('jfrog-user') // Credentials 
             GIT_AUTH = credentials('GIT_AUTH')
         }
 
