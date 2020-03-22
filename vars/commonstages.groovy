@@ -14,7 +14,7 @@ def deleteExistingHelmChart() {
     }
 }
 
-def setSeedVersion(String upstreamEnv) {
+def setServiceVersion(String upstreamEnv) {
     withFolderProperties {
         container('jenkins-agent') {
             script {
