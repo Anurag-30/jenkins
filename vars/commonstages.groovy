@@ -38,7 +38,7 @@ def installHelmChart() {
             sh '''
             echo "### Installing seed helm chart with version: ${SEED_VERSION}"
             helm repo add stable https://artifactory.test.cicd.com/artifactory/anurag-helm-virtual
-            helm upgrade seed-${ENVIRONMENT_NAME} stable/seed  --install --version ${SEED_VERSION} --set environment.name=${ENVIRONMENT_NAME} --namespace ${TASK_NAMESPACE}
+            helm upgrade service-${ENVIRONMENT_NAME} stable/seed  --install --version ${SEED_VERSION} --set environment.name=${ENVIRONMENT_NAME} --namespace ${TASK_NAMESPACE}
             '''
         }
     }
