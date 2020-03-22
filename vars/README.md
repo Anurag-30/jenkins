@@ -18,7 +18,7 @@ Let us assume that we have 40 services but steps to build them can be categorize
 
 ## Solution
 
-Take a look at BuildPipeline.groovy, It consists of 
+Take a look at BuildPipeline.groovy, It consists of all the stages 
 
 
 
