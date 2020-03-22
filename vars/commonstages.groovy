@@ -66,7 +66,7 @@ def triggerDownstreamservice(String downstreamEnv) {
     }
 }
 
-
+// Publishes all kinds of Artifacts
 def PublishArtifacts() {
     container('jenkins-agent') {
             post {
