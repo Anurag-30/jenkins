@@ -46,7 +46,7 @@ def call(Map pipelineParams) {
                         sh "helm lint helm/${env.SERVICE}"
                         sh "helm package helm/${env.SERVICE} --version ${env.Version}"
                         sh "helm repo add stable https://artifactory.test.cicd.com/artifactory/anurag-helm-virtual"
-                        sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T ${SERVICE}-${Version}.tgz https://artifactory.test.cicd.com/artifactory/anurag-helm/maverick/${SERVICE}/${SERVICE}-${Version}.tgz '
+                        sh 'curl -k -u ${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW} -T ${SERVICE}-${Version}.tgz https://artifactory.test.cicd.com/artifactory/anurag-helm/Application/${SERVICE}/${SERVICE}-${Version}.tgz '
                     }
                 }
             }
