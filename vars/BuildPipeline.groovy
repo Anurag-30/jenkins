@@ -3,7 +3,7 @@ def call(Map pipelineParams) {
     pipeline {
         agent {
             kubernetes {
-                yaml libraryResource('jenkins-agent-pod.yaml') // ManiYou will find all the common files under resources
+                yaml libraryResource('jenkins-agent-pod.yaml') // Manifest file for pod. You will find all the common files under resources
             }
         }
 
