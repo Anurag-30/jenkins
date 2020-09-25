@@ -44,7 +44,39 @@ def installHelmChart() {
         }
     }
 }
+def verifyDeployment(){
+          sh ''' 
+            SERVICE_NAMESPACE_COUNT=0;
+            echo "#### FAILED DEPLOYMENTS IN ${SERVICE_NAMESPACE} ####"
+            DEPLOYMENTS_LIST=$(kubectl get deployments -n ${SERVICE_NAMESPACE} -o name);
+            for DEPLOYMENT in $DEPLOYMENTS_LIST;
+            do
+                kubectl rollout status $DEPLOYMENT -n ${SERVICE_NAMESPACE} --timeout=5m;
+                ROLLOUT_STATUS=$?;
+                SERVICE_NAMESPACE_COUNT=$((SERVICE_NAMESPACE_COUNT + ROLLOUT_STATUS));
+            done;
 
+            echo "#### Failed Deployment Count in $SERVICE_NAMESPACE is $SERVICE_NAMESPACE_COUNT ####";
+
+            WEB_NAMESPACE_COUNT=0;
+
+            echo "#### FAILED DEPLOYMENTS IN ${WEB_NAMESPACE} ####"
+            DEPLOYMENTS_LIST=$(kubectl get deployments -n ${WEB_NAMESPACE} -o name);
+
+            for DEPLOYMENT in $DEPLOYMENTS_LIST;
+            do
+                kubectl rollout status $DEPLOYMENT -n ${WEB_NAMESPACE} --timeout=5m;
+                ROLLOUT_STATUS=$?;
+                WEB_NAMESPACE_COUNT=$((WEB_NAMESPACE_COUNT + ROLLOUT_STATUS));
+            done;
+
+            echo "#### Failed Deployment Count in $WEB_NAMESPACE is $WEB_NAMESPACE_COUNT ####";
+
+            [[ "${SERVICE_NAMESPACE_COUNT}" != "0" || "${WEB_NAMESPACE_COUNT}" != "0"  ]] && { echo "Deployment Failed"; exit 1; }
+
+            echo "#### Deployment Successful ####"
+            '''
+}
 def publishVersion() {
     withFolderProperties {
         container('jenkins-agent') {
