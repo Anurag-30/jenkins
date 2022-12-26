@@ -1,5 +1,4 @@
-This is the list of learnings and observations from your past, please keep revisitng this and make it better not worse:
-
+This is the list of learnings and observations from the past:
 There are two ways you write a Jenkinsfile
 a) scripted pipeline - using node
 b) declarative pipeline - using pipeline
