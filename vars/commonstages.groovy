@@ -15,6 +15,8 @@ def deleteExistingHelmChart() {
 }
 // Function to get the service version
 import groovyx.net.http.HTTPBuilder
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
 
 def setServiceVersion() {
     // Create an HTTPBuilder instance
@@ -25,22 +27,43 @@ def setServiceVersion() {
         if("${ENVIRONMENT_NAME}" == "sit") {
             // If it is, get the service version from a URL
             def response = http.get("https://artifactory.test.cicd.com/artifactory/anurag-generic/services-build-versions/service/version.txt")
-            env.SERVICE_VERSION = response.split('=')[1]
+
+            // Convert the response to a JSON string
+            def jsonString = JsonOutput.toJson(response)
+
+            // Write the JSON string to a file
+            def file = new File("response.json")
+            file.write(jsonString)
+
+            // Parse the JSON string and get the service version
+            def slurper = new JsonSlurper()
+            def json = slurper.parseText(jsonString)
+            env.SERVICE_VERSION = json.serviceVersion
         }
         else {
             // If it's not "sit", get the upstream build number and use it to get the service version from a different URL
             def upstream_build_number = UPSTREAM_BUILD.split('#')[1]
             def response = http.get("https://artifactory.test.cicd.com/artifactory/anurag-generic/${upstreamEnv}-verified/service/version-${upstream_build_number}.txt")
-            env.SERVICE_VERSION = response.split('=')[1]
+
+            // Convert the response to a JSON string
+            def jsonString = JsonOutput.toJson(response)
+
+            // Write the JSON string to a file
+            def file = new File("response.json")
+            file.write(jsonString)
+
+            // Parse the JSON string and get the service version
+            def slurper = new JsonSlurper()
+            def json = slurper.parseText(jsonString)
+            env.SERVICE_VERSION = json.serviceVersion
         }
     }
     catch (Exception e) {
         // If an exception is thrown, print the error message and set the SERVICE_VERSION variable to "error"
         println(e.getMessage())
-        error("An error occurred with the above exeception and the service version couldn't be set", 1)
+        env.SERVICE_VERSION = "error"
     }
 }
-
 
 
 // Function Installing Helm chart 
