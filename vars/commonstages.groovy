@@ -61,7 +61,7 @@ def setServiceVersion() {
     catch (Exception e) {
         // If an exception is thrown, print the error message and set the SERVICE_VERSION variable to "error"
         println(e.getMessage())
-        env.SERVICE_VERSION = "error"
+        error("An error occurred with the above exeception and the service version couldn't be set", 1)
     }
 }
 
